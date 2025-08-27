@@ -31,7 +31,7 @@ def publish_kinesis(event: Dict[str, object], stream: str) -> None:
 
 def publish_pubsub(event: Dict[str, object], topic: str) -> None:
     """Send the event to a GCP Pub/Sub topic."""
-    try:  # pragma: no cover - optional dependency
+    try:  
         from google.cloud import pubsub_v1
 
         publisher = pubsub_v1.PublisherClient()
