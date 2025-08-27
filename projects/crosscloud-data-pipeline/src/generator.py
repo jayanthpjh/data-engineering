@@ -1,4 +1,4 @@
-"""Generate and optionally export synthetic sales data."""
+"""Generate and export synthetic sales data."""
 
 import csv
 import os
