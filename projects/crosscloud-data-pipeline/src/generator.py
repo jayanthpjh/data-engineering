@@ -26,7 +26,7 @@ def generate_sales_data(n: int = 10) -> List[Dict[str, object]]:
 
 def upload_to_s3(rows: List[Dict[str, object]], bucket: str, key: str) -> None:
     """Upload the rows as a CSV object to Amazon S3."""
-    try:  # pragma: no cover - optional dependency
+    try:  
         import boto3
         import io
 
