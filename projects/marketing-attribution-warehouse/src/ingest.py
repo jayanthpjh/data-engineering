@@ -29,7 +29,7 @@ def generate_marketing_data(n: int = 20) -> List[Dict[str, object]]:
 
 def upload_to_s3(rows: List[Dict[str, object]], bucket: str, key: str) -> None:
     """Upload rows as CSV to S3."""
-    try:  # pragma: no cover - optional dependency
+    try:  
         import boto3
         import io
 
@@ -49,7 +49,7 @@ def upload_to_s3(rows: List[Dict[str, object]], bucket: str, key: str) -> None:
 
 def load_to_bigquery(rows: List[Dict[str, object]], table: str) -> None:
     """Load rows into BigQuery."""
-    try:  # pragma: no cover - optional dependency
+    try:  
         from google.cloud import bigquery
 
         client = bigquery.Client()
