@@ -1,0 +1,27 @@
+name: CI - Build and Smoke Test
+
+on:
+  push:
+    paths:
+      - 'projects/crosscloud-data-pipeline/**'
+  pull_request:
+    paths:
+      - 'projects/crosscloud-data-pipeline/**'
+
+jobs:
+  linux-build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image (smoke)
+        working-directory: projects/crosscloud-data-pipeline
+        run: |
+          docker build -t crosscloud-pipeline:ci .
+          docker run --rm crosscloud-pipeline:ci python src/generator.py
+
+      - name: PyPI install + generator smoke (inside VM, no docker)
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --prefer-binary -r projects/crosscloud-data-pipeline/requirements.txt
+          python projects/crosscloud-data-pipeline/src/generator.py
