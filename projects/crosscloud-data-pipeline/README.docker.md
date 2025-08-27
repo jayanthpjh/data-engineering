@@ -1,5 +1,5 @@
-Docker-based verification (use if local installs act up)
-------------------------------------------------------
+Use this Docker-based verification (use if local pip builds fail on Windows)
+---------------------------------------------------------------
 
 ### Why
 Windows can be picky about compiling Python packages. If a local install gives you trouble, run the project inside the provided Docker image so you know you're starting from a clean Linux environment.
