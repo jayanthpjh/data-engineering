@@ -1,16 +1,15 @@
-Docker-based verification (use if local pip builds fail on Windows)
+Use this Docker-based verification (use if local pip builds fail on Windows)
 ---------------------------------------------------------------
 
-Why
-----
-Some Python packages (pandas, numpy extensions) may need compilation on Windows and require Visual Studio build tools. To avoid local build issues, we provide a Dockerfile and a CI workflow that builds and runs the project in a clean Ubuntu environment.
+### Why
+Windows can be picky about compiling Python packages. If a local install gives you trouble, run the project inside the provided Docker image so you know you're starting from a clean Linux environment.
 
-Quick local test (requires Docker Desktop):
-
+### Quick local test (requires Docker Desktop)
 ```bash
 cd projects/crosscloud-data-pipeline
 docker build -t crosscloud-pipeline:local .
 docker run --rm crosscloud-pipeline:local python src/generator.py
 ```
 
-This replicates what the CI will do on GitHub Actions and ensures the project is buildable in a clean Linux environment.
+This mirrors what GitHub Actions does and proves the project builds cleanly in a vanilla container.
+
