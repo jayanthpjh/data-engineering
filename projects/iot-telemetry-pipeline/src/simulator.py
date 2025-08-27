@@ -19,7 +19,7 @@ def generate_event(device_id: int) -> Dict[str, object]:
 
 def publish_kinesis(event: Dict[str, object], stream: str) -> None:
     """Send the event to an AWS Kinesis stream."""
-    try:  # pragma: no cover - optional dependency
+    try:  
         import boto3
 
         client = boto3.client("kinesis")
