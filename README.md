@@ -11,4 +11,4 @@ Hi there! This repo is my sandbox of miniature data projects. Each folder tells 
 | [Marketing Attribution Warehouse](projects/marketing-attribution-warehouse) | Generates ad spend records, computes CPA, and summarizes by channel. | AWS + GCP |
 
 Clone the repo, pick a project, and run the script.
-Built for curious recruiters and hiring managers—reach out if you'd like a tour of any example!
+
