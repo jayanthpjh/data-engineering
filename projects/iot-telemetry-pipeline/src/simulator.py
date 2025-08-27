@@ -1,4 +1,4 @@
-"""Simulate IoT device telemetry and optionally publish to cloud streams."""
+"""Simulate IoT device telemetry and publish to cloud."""
 
 import json
 import os
